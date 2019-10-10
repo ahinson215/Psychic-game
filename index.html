@@ -8,27 +8,59 @@
 </head>
 <body>
     
-    <script>
-        
- var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
- var randomLetter = letters[Math.floor(Math.random()*letters.length)];
-document.body.innerHTML = randomLetter;
-
-
-console.log(randomLetter)
-
-
-        
-
-
-
-        </script>
+  
         <h1>Psychic game</h1>
 
         <p>Guess what letter im thinking of</p>
-        <p>Wins:0</p>
+        <p>Wins:<span id = "wins">0</span></p>
         <p>losses:0</p>
         <p>Guesses left:9</p>
-        <p>Your Guesses so far:</p>
+        <p>Your Guesses so far: <span id = "lettersguessed"></span> </p>
+
+
+
+
+        <script>
+        
+          var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+          var computerGuess = letters[Math.floor(Math.random()*letters.length)];
+          var wins= 0
+          var guessesLeft = 9
+          var userGuesses = []
+          var userGuess = ""
+
+    
+
+   function reset ()  {
+   document.onkeyup = function(event) {
+    let userGuess = event.key;
+    
+    var guessesLeft = 9;
+   var computerGuess = letters[Math.floor(Math.random()*letters.length)];
+
+
+   document.getElementById("lettersguessed").append(userGuess + ", ")
+   function compareGuess () {
+    if( computerGuess === userGuess){
+
+alert("hey you guessed right!")
+}  
+   } 
+
+   }
+
+
+   }
+   reset ()
+   console.log(computerGuess)
+   console.log(userGuess)
+   
+
+
+
+        
+         
+               
+                 </script>
 </body>  
 </html>
